@@ -5,37 +5,27 @@ package pl.com.bottega.commons.math;
  */
 public class Sorter {
 
-    public int[] sort(int[] number){
+    public static int[] sort(int[] number){
 
-        int[] result = new int[number.length];
-
-        for (int i = 0, j = 0; i < number.length; i++, j++) {
-            result[j] = number[i];
-        }
-        bubbleSort(result);
-
-        for (int n = 0 ; n < result.length ; n++){
-            System.out.println(result[n]);
-        }
-
-        return result;
+        return bubbleSort(number);
     }
 
-    public void sortInPlace(int[] number){
+    public static void sortInPlace(int[] number){
         bubbleSort(number);
     }
 
-    private void bubbleSort(int[] data4Sort){
+    private static int[] bubbleSort(int[] dataForSort){
         int thirdCup = 0;
-        int length = data4Sort.length;
+        int length = dataForSort.length;
         for (int i = 0; i < length; i++) {
             for (int j = 1; j < (length - i); j++) {
-                if (data4Sort[j - 1] > data4Sort[j]) {
-                    thirdCup = data4Sort[j - 1];
-                    data4Sort[j - 1] = data4Sort[j];
-                    data4Sort[j] = thirdCup;
+                if (dataForSort[j - 1] > dataForSort[j]) {
+                    thirdCup = dataForSort[j - 1];
+                    dataForSort[j - 1] = dataForSort[j];
+                    dataForSort[j] = thirdCup;
                 }
             }
         }
+        return dataForSort;
     }
 }
