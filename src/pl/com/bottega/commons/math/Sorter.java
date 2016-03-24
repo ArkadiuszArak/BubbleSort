@@ -6,8 +6,8 @@ package pl.com.bottega.commons.math;
 public class Sorter {
 
     public static int[] sort(int[] number){
-
-        return bubbleSort(number);
+        int[] tmp = number.clone();
+        return bubbleSort(tmp);
     }
 
     public static void sortInPlace(int[] number){
